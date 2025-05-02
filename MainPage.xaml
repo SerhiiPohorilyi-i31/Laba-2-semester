@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="Lab7_task21.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Lab7_task21"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="636">
+
+    <Grid RenderTransformOrigin="0.493,0.489">
+        <TextBox x:Name="Назва_страви" HorizontalAlignment="Left" Margin="69,92,0,0" TextWrapping="Wrap" Text="Нвзва страви" VerticalAlignment="Top" Height="46" Width="366"/>
+        <TextBox x:Name="Категорія" HorizontalAlignment="Left" Margin="69,160,0,0" TextWrapping="Wrap" Text="Категорія" VerticalAlignment="Top" Width="366" Height="46"/>
+        <TextBox x:Name="Інгредієнти" HorizontalAlignment="Left" Margin="69,226,0,0" TextWrapping="Wrap" Text="Інгредієнти" VerticalAlignment="Top" Width="366" Height="46"/>
+        <TextBox x:Name="Рейтинг" HorizontalAlignment="Left" Margin="69,0,0,0" TextWrapping="Wrap" Text="Рейтинг" VerticalAlignment="Center" RenderTransformOrigin="0.443,-1.427" Width="366" Height="48"/>
+        <Button x:Name="Додати" Content="Дадати" Margin="69,395,0,0" VerticalAlignment="Top" Width="156" Click="Додати_Click"/>
+        <Button x:Name="Редагувати" Content="Редагувати" Margin="275,395,0,0" VerticalAlignment="Top" Width="160" Click="Редагувати_Click"/>
+        <Button x:Name="Видалити" Content="Видалити" Margin="69,454,0,0" VerticalAlignment="Top" Width="157" Click="Видалити_Click"/>
+        <Button x:Name="Очистити" Content="Очистити" Margin="275,454,0,0" VerticalAlignment="Top" Width="160" Click="Очистити_Click"/>
+        <ListView x:Name="ListViewDishes" Height="250" VerticalAlignment="Top" Margin="516,92,153,0" Background="#E6EDE0C1" SelectionChanged="ListViewDishes_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding Category}" FontStyle="Italic" />
+                        <TextBlock Text="{Binding Ingredients}" />
+                        <TextBlock Text="{Binding Rating}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
